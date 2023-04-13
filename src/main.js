@@ -1,6 +1,5 @@
 /* __________ Tags __________ */
 const countDownButtons = document.querySelectorAll(".count-down");
-const pageTitle = document.querySelector(".page-title");
 
 const countDownUpNumber = document.querySelectorAll(".up-number");
 const countDownDownNumber = document.querySelectorAll(".down-number");
@@ -106,7 +105,6 @@ const startCountDown = () => {
   });
 };
 
-/* __________ Listeners __________ */
-pageTitle.addEventListener("click", () => {
+setTimeout(() => {
   startCountDown();
-});
+}, 1000);
