@@ -234,7 +234,7 @@
     top: 2rem;
   }
   .container-count-down .container-single-count-down .count-down .current-number::before, .container-count-down .container-single-count-down .count-down .current-number::after {
-    height: 0.6rem;
+    height: 1px;
   }
   .container-count-down .container-single-count-down .count-down .up-number,
 .container-count-down .container-single-count-down .count-down .down-number {
@@ -243,13 +243,13 @@
     font-size: 2rem !important;
   }
   .container-count-down .container-single-count-down .count-down .down-number::before {
-    transform: translateY(-1.45rem) !important;
+    transform: translateY(-23px) !important;
   }
   .container-count-down .container-single-count-down .count-down .up-number {
     overflow: hidden !important;
   }
   .container-count-down .container-single-count-down .count-down .up-number::before {
-    transform: translateY(0.55rem) !important;
+    transform: translateY(10px) !important;
   }
   .container-count-down .container-single-count-down .count-down-title {
     font-weight: 500;
@@ -262,7 +262,7 @@
     font-size: 2rem;
   }
   .mittle-number::before {
-    padding-top: 0.55rem;
+    padding-top: 11px;
   }
 }
 *, *::before, *::after {

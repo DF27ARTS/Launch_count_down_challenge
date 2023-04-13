@@ -271,10 +271,11 @@
 
         .current-number {
           top: 2rem ;
+          // border: 2px solid red;
 
           &::before,
           &::after {
-            height: .6rem;
+            height: 1px;
           }
         }
 
@@ -288,7 +289,7 @@
         .down-number {
 
           &::before {
-            transform: translateY(-1.45rem) !important;
+            transform: translateY(-23px) !important;
           }
         }
 
@@ -296,7 +297,7 @@
           overflow: hidden !important;
 
           &::before {
-            transform: translateY(0.55rem) !important;
+            transform: translateY( 10px) !important;
           }
         }
       }
@@ -310,14 +311,14 @@
 
   .mittle-number {
     height: 2rem;
-  
+
     &::before,
     &::after {
       font-size: 2rem;
     }
   
     &::before {
-      padding-top: 0.55rem;
+      padding-top: 11px;
     }
   }
 }
