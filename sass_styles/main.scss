@@ -18,3 +18,9 @@ body {
 
   background: var(--background-color);
 }
+
+@media screen and (max-width: $movile-media-screen-size) {
+  html {
+    font-size: 10px;
+  }
+}

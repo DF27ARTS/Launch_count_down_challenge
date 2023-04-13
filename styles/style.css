@@ -23,7 +23,6 @@
 .main-container {
   height: 100vh;
   width: 100vw;
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -222,47 +221,20 @@
 }
 
 @media screen and (max-width: 450px) {
-  .container-count-down .container-single-count-down {
-    height: 6rem;
+  .main-container {
+    padding: 15rem 0;
+    height: 100%;
   }
-  .container-count-down .container-single-count-down .count-down {
-    height: 5rem;
-    width: 4.5rem;
-    border-radius: 0.3rem;
-  }
-  .container-count-down .container-single-count-down .count-down .current-number {
-    top: 2rem;
-  }
-  .container-count-down .container-single-count-down .count-down .current-number::before, .container-count-down .container-single-count-down .count-down .current-number::after {
-    height: 1px;
-  }
-  .container-count-down .container-single-count-down .count-down .up-number,
-.container-count-down .container-single-count-down .count-down .down-number {
-    height: 2rem !important;
-    overflow: auto !important;
-    font-size: 2rem !important;
-  }
-  .container-count-down .container-single-count-down .count-down .down-number::before {
-    transform: translateY(-23px) !important;
-  }
-  .container-count-down .container-single-count-down .count-down .up-number {
-    overflow: hidden !important;
-  }
-  .container-count-down .container-single-count-down .count-down .up-number::before {
-    transform: translateY(10px) !important;
+  .page-title {
+    font-size: 2.5rem;
   }
   .container-count-down .container-single-count-down .count-down-title {
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 1.1rem;
   }
-  .mittle-number {
-    height: 2rem;
-  }
-  .mittle-number::before, .mittle-number::after {
-    font-size: 2rem;
-  }
-  .mittle-number::before {
-    padding-top: 11px;
+  .page-footer {
+    height: 15rem;
+    background-position: right;
   }
 }
 *, *::before, *::after {
@@ -278,6 +250,12 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size);
   background: var(--background-color);
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
