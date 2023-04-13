@@ -1,0 +1,323 @@
+
+@use "variables" as *;
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 5.5rem 0;
+
+  background-image: url("../images/bg-stars.svg");
+  background-blend-mode: multiply;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  position: relative;
+}
+
+.page-title {
+  font-size: 1.2rem;
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.container-count-down {
+  height: 11rem;
+  display: flex;
+  gap: 1rem;
+
+  .container-single-count-down {
+    height: 100%;
+    // width: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: perspective(700px);
+
+
+    .count-down {
+      height: 8.4rem;
+      width: 8rem;
+      border-radius: .5rem;
+      background: var(--very-dark);
+
+      position: relative;
+      transform-style: preserve-3d;
+
+
+      .current-number {
+        position: absolute;
+        top: 3.8rem ;
+
+        height: .8px;
+        width: 100%;
+        border-radius: inherit;
+        background: var(--very-dark);
+
+        transform-style: preserve-3d;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          z-index: 20;
+
+          height: .7rem;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background: var(--very-dark);
+
+          transform: translateZ(5px);
+        }
+
+        &::before { 
+          left: -.4rem ;
+          clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%) ;
+        }
+        &::after { 
+          right: -.4rem; 
+          clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%) ;
+        }
+
+
+        .up-number,
+        .down-number {
+          position: absolute;
+          height: 4rem;
+          width: 100%;
+          background: var(--dark-desaturated-blue);
+
+          border-radius: inherit;
+          overflow: hidden;
+          font-size: 4rem;
+
+          color: var(--soft-red);
+          transform-style: preserve-3d;
+
+
+          &::before {
+            transform-style: preserve-3d !important;
+            background: var(--dark-desaturated-blue);
+          }
+        }
+
+        .down-number {
+          top: 100%;
+
+          &::before {
+            position: absolute;
+            content: attr(area-count-down);
+            height: 100%;
+            width: 100%;
+            font-weight: 1000;
+            text-align: center;
+
+            transform: translateY(-2.9rem);
+          }
+        }
+
+        .up-number {
+          bottom: 100%;
+          background: var(--darker-desaturated-blue);
+
+          &::before {
+            position: absolute;
+            content: attr(area-count-up);
+            height: 100%;
+            width: 100%;
+            font-weight: 1000;
+            text-align: center;
+            background: var(--darker-desaturated-blue);
+            color: var(--dark-red);
+
+
+            transform: translateY(1.2rem);
+          }
+        }
+      }
+    }
+
+    .count-down-title {
+      color: var(--grayish-blue);
+      font-weight: var(--font-weight-700);
+      font-size: .8rem;
+    }
+  }
+}
+
+.mittle-number {
+  position: absolute;
+  height: 4rem;
+  width: 100%;
+  background: var(--dark-desaturated-blue);
+
+  border-radius: inherit;
+
+  color: var(--soft-red);
+  transform-style: preserve-3d;
+
+  bottom: 1px;
+  
+  transform-origin: 0% 100%;
+  transform: translateZ(.1px) rotateX(0deg) ;
+  
+  transition: transform 700ms ease;
+  overflow: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    font-size: 4rem;
+    font-weight: 1000;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &::after {
+    content: attr(area-count-up);
+    line-height: 0;
+    transform: translateZ(-.1px) rotateX(180deg);
+  }
+
+  &::before {
+    content: attr(area-count-down);
+    padding-top: 1.2rem;
+    transform: translateZ(.1px);
+
+    background: var(--darker-desaturated-blue);
+    color: var(--dark-red);
+  }
+}
+
+.page-footer {
+  position: absolute;
+  inset: auto auto 0 0;
+  height: 10rem;
+  width: 100vw;
+
+  background-image: url("../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  .footer-icon {
+    fill: var(--grayish-blue);
+    cursor: pointer;
+
+    transition: fill 250ms ease;
+
+    &:hover {
+      fill: var(--soft-red);
+    }
+  }
+}
+
+.current-count-active {
+
+  .mittle-number {
+
+    animation: count-down-one 700ms ease-in forwards;
+
+    @keyframes count-down-one {
+      to {  
+        bottom: -.5px;
+        transform: translateZ(.1px) rotateX(-180deg)  
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $movile-media-screen-size) {
+  .container-count-down {
+    .container-single-count-down {
+      height: 6rem;
+
+      .count-down {
+
+
+        height: 5rem;
+        width: 4.5rem;
+        border-radius: .3rem;
+
+        .current-number {
+          top: 2rem ;
+
+          &::before,
+          &::after {
+            height: .6rem;
+          }
+        }
+
+        .up-number,
+        .down-number {
+          height: 2rem !important;
+          overflow: auto   !important;
+          font-size: 2rem !important;
+        }
+
+        .down-number {
+
+          &::before {
+            transform: translateY(-1.45rem) !important;
+          }
+        }
+
+        .up-number {
+          overflow: hidden !important;
+
+          &::before {
+            transform: translateY(0.55rem) !important;
+          }
+        }
+      }
+
+      .count-down-title {
+        font-weight: 500;
+        font-size: .6rem;
+      }
+    }
+  }
+
+  .mittle-number {
+    height: 2rem;
+  
+    &::before,
+    &::after {
+      font-size: 2rem;
+    }
+  
+    &::before {
+      padding-top: 0.55rem;
+    }
+  }
+}

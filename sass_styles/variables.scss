@@ -1,0 +1,34 @@
+
+:root {
+  /* _____ Colors _____ */
+
+  // Primary
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --dark-red: hsl(345, 61%, 54%);
+
+  // Neutral
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --darker-desaturated-blue: hsl(235, 25%, 20%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --very-dark: hsl(234, 17%, 12%);
+  --background-color: 
+    linear-gradient(
+      hsl(234, 17%, 12%), 50%, 
+      hsl(278, 15%, 14%), 
+      hsl(277, 18%, 20%)
+    );
+
+
+  /* _____ Typography _____ */
+
+  // Body Copy
+  --font-size: 14px;
+
+  // Font
+  --font-family: 'Red Hat Text', sans-serif;
+  --font-weight-700: 700;
+}
+
+$movile-media-screen-size: 450px;
