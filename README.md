@@ -27,11 +27,11 @@ Users should be able to:
 
 #### Desktop desing
 
-![Desktop design](./screenshots/desktop-design.png);
+![Desktop design](./screenshots/desktop-design.png)
 
 #### Movile design
 
-![Movile design](./screenshots/movile-design.png);
+![Movile design](./screenshots/movile-design.png)
 
 ### Links
 
